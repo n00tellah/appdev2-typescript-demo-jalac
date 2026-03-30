@@ -18,7 +18,7 @@
 
     // Another Special Type `never`
     // Function never finishes normally (throws error, infinite loop)
-    function logAndThrow(errorMessage: string) {
+    function logAndThrow(errorMessage: string): never {
         console.log(errorMessage)
         throw new Error(errorMessage)
     }
@@ -28,11 +28,15 @@
     // () => {} is not same as () => void
     // () => {} - arrow function
     // () => void - function type
-    function performJob(cb: (m: string) => void) {  // you can also use cb: Function but () => void is the best practice
-        // ...
-        cb('Job Done!')
-    }
-
+    // function performJob(cb: (m: string) => void) {  // you can also use cb: Function but () => void is the best practice
+    //     // ...
+    //     cb('Job Done!')
+    // }
+    function performJob(cb: Function) {  
+    cb('Job Done!')
+}
+          
+  
     let logMsg = (msg: string): void => {
         console.log(msg)
     }
@@ -47,8 +51,8 @@
     }
 
     let user: User = {
-        name: "Elmer",
-        age: 39,
+        name: "Estela",
+        age: 22,
         // greet: function() {
         //     return this.name
         // }
@@ -59,4 +63,4 @@
     }
 
     user.greet()
-})
+})();
