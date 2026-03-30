@@ -13,9 +13,21 @@
 
     let userRole: Role = 'admin'
 
+    let user: User = {
+        name: 'Jane Doe',
+        age: 22,
+        role: 'admin',
+        permission: ['read', 'write', 'delete']
+    }
+    user.age = 23
+    user.name = 'John Doe'
+
     // ...
 
     function access(role: Role) {
         // ...
     }
-})
+
+    console.log(userRole)
+    console.log(user)
+})()
