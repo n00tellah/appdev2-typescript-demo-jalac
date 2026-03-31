@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "strict": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "module": "CommonJS",
+    "target": "ES6"
   }
 }
